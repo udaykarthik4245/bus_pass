@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f8f8f8;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      }
+      fieldset {
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        padding: 16px;
+        background: #fafafa;
+      }
+      legend {
+        font-weight: bold;
+        padding: 0 8px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td {
+        padding: 8px 6px;
+        vertical-align: top;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="date"],
+      input[type="email"],
+      input[type="file"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 6px 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 1em;
+      }
+      textarea {
+        resize: vertical;
+      }
+      .captcha-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin: 8px 0;
+      }
+      .submit-button button {
+        background: #1976d2;
+        color: #fff;
+        border: none;
+        padding: 10px 32px;
+        border-radius: 4px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .submit-button button:hover {
+        background: #125ea2;
+      }
+      @media (max-width: 600px) {
+        .container {
+          padding: 6px;
+        }
+        table, tbody, tr, td {
+          display: block;
+          width: 100%;
+        }
+        td {
+          padding: 6px 0;
+        }
+        .submit-button button {
+          width: 100%;
+        }
+        .captcha-box, .captcha-input, .submit-button {
+          text-align: center;
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="captcha-box">
+      <center>
+        <img src="https://media.telanganatoday.com/wp-content/uploads/2024/05/No-change-in-TSRTC-logo-cl.jpg" alt="Captcha Image" width="80"></center>
+    </div>
+    <h1><center>TELANGANA STATE ROAD TRANSPORT CORPORATION</center></h1>
+    <h2><center>GENERAL BUS PASS APPLICATION</center></h2>
+    <fieldset>
+        <legend>Application Details</legend>
+        <table class="app-details-table" width="100%">
+          <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name"></td>
+            <td>Father's/Guardian's Name:</td>
+            <td><input type="text" name="fathername"></td>
+          </tr>
+          <tr>
+            <td>Date of Birth:</td>
+            <td><input type="date" name="dob"></td>
+            <td>Gender:</td>
+            <td>
+              <input type="radio" id="male" name="gender" value="male"><label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value="female"><label for="female">Female</label>
+              <input type="radio" id="other" name="gender" value="other"><label for="other">Other</label>
+            </td>
+          </tr>
+          <tr>
+            <td>Age:</td>
+            <td><input type="number" name="age"></td>
+            <td>Aadhar No:</td>
+            <td><input type="number" name="aadhar"></td>
+          </tr>
+          <tr>
+            <td>Whatsapp No:</td>
+            <td><input type="text" name="whatsapp"></td>
+            <td>Email ID:</td>
+            <td><input type="email" name="email"></td>
+          </tr>
+          <tr>
+            <td>Photo:</td>
+            <td><input type="file" name="photo"></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+    </fieldset>
+    <!-- </fieldset> -->
+     <br>
+    <fieldset>
+      <legend>Residential Address Details</legend>
+      <table width="100%">
+        <tr>
+          <td>Address:</td>
+          <td>
+            <textarea name="address" rows="3" cols="30"></textarea>
+            <br>
+            <small>(maximum characters: 20)</small>
+          </td>
+          <td>District:</td>
+          <td>
+            <select id="district" name="district">
+              <option value="">Select District</option>
+              <option value="andhrapradesh">Mahaboob nagar</option>
+              <option value="bihar">Bihar</option>
+              <option value="madhyapradesh">Madhya Pradesh</option>
+              <option value="tamilnadu">Tamil Nadu</option>
+              <option value="karnataka">Karnataka</option>
+            </select>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>Mandals:</td>
+          <td>
+            <select id="mandal" name="Mandal">
+              <option value="">Select </option>
+              <option value="narasaraopet">Narasaraopet</option>
+              <option value="chirala">Chirala</option>
+              <option value="inkollu">Inkollu</option>
+              <option value="chittor">Chittor</option>
+              <option value="tuni">Tuni</option>
+            </select>
+          </td>
+          <td>Village:</td>
+          <td>
+            <select id="village" name="village">
+              <option value="">Select Village</option>
+              <option value="village1">Hyderabad</option>
+          
+            
+            </select>
+          </td>
+          
+        </tr>
+        <tr>
+          
+            <td>Pincode</td>
+            <td><input type="text"></td>
+        </tr>
+      </table>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Pass Type Details</legend>
+        <table cellpadding="10">
+            <tr>
+            <td>District:</td>
+            <td>
+               <select id="district" name="district">
+                <option value="">Select District</option>
+                <option value="andhrapradesh">Andhra Pradesh</option>
+                <option value="bihar">Bihar</option>
+                <option value="madhyapradesh">Madhya Pradesh</option>
+                <option value="tamilnadu">Tamil Nadu</option>
+                <option value="karnataka">Karnataka</option>
+            </select>
+          </td>
+            </tr>
+        <tr>
+            <td>Pass type:</td>
+            <td><select value="">
+              <option value="-----SELECT-----">-----SELECT-----</option>
+              <option value="GREATER PASS">GREATER PASS</option>
+              <option value="GENERAL ORDINARY ROUTE PASS MTLY">GENERAL ORDINARY ROUTE PASS MTLY</option>
+              <option value="GENERAL METRO EXPRESS ROUTE PASS MTLY">GENERAL METRO EXPRESS ROUTE PASS MTLY</option>
+              <option value="ORDINARY PASS">ORDINARY PASS</option>
+              <option value="METRO EXPRESS PASS">METRO EXPRESS PASS</option>
+              <option value="METRO DELUXE PASS">METRO DELUXE PASS</option>
+              </select></td>
+        </tr>
+        </table>
+    </fieldset>
+    <br>
+    <fieldset><legend>Payment and pass Collection Details</legend>
+    <table width="50%">
+        <tr>
+            <td>Payment Mode</td>
+            <td>
+                <select id="paymentmode" name="paymentmode">
+                    <option value="" disabled selected>Select Payment Type</option>
+                    <option value="counter">Payement at Counter</option>
+                    
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Pass Delivery Mode</td>
+            <td>
+                <select id="passcollection" name="passcollection">
+                    <option value="" disabled selected>Select Pass Collection Mode</option>
+                    <option value="counter">At Counter</option>
+                    <option value="home">Home Delivery</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+          <td>Center at which you want to Collect Pass </td>
+          <td><select name="" id="" placeholder="select">
+            <option value="----Select----">---select---</option>
+            <option value="1275">RTC ABIDS -- HYD [ 24/06/2025 ]</option>
+            <option value="850">RTC AFZALGUNJ -- HYD [ 24/06/2025 ]</option>
+            <option value="1095">RTC AIRPORT -- HYD [ 24/06/2025 ]</option>
+            <option value="1197">RTC ARAMGHAR -- HYD [ 24/06/2025 ]</option>
+            <option value="1212">RTC BALA NAGAR -- HYD [ 24/06/2025 ]</option>
+            <option value="1284">RTC BORABANDA -- HYD [ 24/06/2025 ]</option>
+            <option value="923">RTC CBS -- HYD [ 24/06/2025 ]</option>
+            <option value="1222">RTC CHARMINAR -- HYD [ 24/06/2025 ]</option>
+            <option value="918">RTC DILSUKHNAGAR -- HYD [ 24/06/2025 ]</option>
+            <option value="992">RTC ECIL -- HYD [ 24/06/2025 ]</option>
+            <option value="1203">RTC FAROOQNAGAR -- HYD [ 24/06/2025 ]</option>
+            <option value="1175">RTC GHATKESAR -- HYD [ 24/06/2025 ]</option>
+            <option value="876">RTC HAYATHNAGAR -- HYD [ 24/06/2025 ]</option>
+            <option value="852">RTC IBRAHIMPATNAM -- HYD [ 24/06/2025 ]</option>
+            <option value="924">RTC JBS -- HYD [ 24/06/2025 ]</option>
+            <option value="1036">RTC KACHIGUDA -- HYD [ 24/06/2025 ]</option>
+            <option value="1024">RTC KOTI -- HYD [ 24/06/2025 ]</option>
+            <option value="944">RTC KPHB -- HYD [ 24/06/2025 ]</option>
+            <option value="945">RTC KUKATAPALLY -- HYD [ 24/06/2025 ]</option>
+            <option value="1342">RTC LAKDIKAPOOL -- HYD [ 24/06/2025 ]</option>
+            <option value="990">RTC LB NAGAR -- HYD [ 24/06/2025 ]</option>
+            <option value="1186">RTC LINGAMPALLY -- HYD [ 24/06/2025 ]</option>
+            <option value="1272">RTC LOTHUKUNTA -- HYD [ 24/06/2025 ]</option>
+            <option value="1034">RTC MEDCHAL -- HYD [ 24/06/2025 ]</option>
+            <option value="931">RTC MEHDIPATNAM -- HYD [ 24/06/2025 ]</option>
+            <option value="851">RTC MIDHANI -- HYD [ 24/06/2025 ]</option>
+            <option value="1206">RTC MOINABAD -- HYD [ 24/06/2025 ]</option>
+            <option value="991">RTC NGOS COLONY -- HYD [ 24/06/2025 ]</option>
+            <option value="943">RTC PATANCHERU -- HYD [ 25/06/2025 ]</option>
+            <option value="1096">RTC RATHIFILE -- HYD [ 24/06/2025 ]</option>
+            <option value="1183">RTC RISALABAZAR -- HYD [ 24/06/2025 ]</option>
+            <option value="994">RTC SANATHNAGAR -- HYD [ 24/06/2025 ]</option>
+            <option value="1215">RTC  SECERTARIAT -- HYD [ 24/06/2025 ]</option>
+            <option value="1035">RTC SHAMSHABAD -- HYD [ 24/06/2025 ]</option>
+            <option value="877">RTC SHAPURNAGAR -- HYD [ 24/06/2025 ]</option>
+            <option value="1194">RTC SR NAGAR -- HYD [ 24/06/2025 ]</option>
+            <option value="1209">RTC SUCHITRA -- HYD [ 24/06/2025 ]</option>
+            <option value="1023">RTC TARNAKA -- HYD [ 24/06/2025 ]</option>
+            <option value="1231">RTC THUKKUGUDA -- HYD [ 24/06/2025 ]</option>
+            <option value="993">RTC UPPAL -- HYD [ 24/06/2025 ]</option>    </select></td>
+      </tr>
+        
+
+    </table>
+
+    </fieldset>
+    <br>
+
+    <div class="captcha-box">
+      <center>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAcNRqScnNRtUmLjVKPGVE7POeNePb3Jg1-VeeVSWEa1nltyY6aXgxFAryNrPEtc6yEg&usqp=CAU" class="captcha-img" alt="Captcha Image" width="80"></center>
+    </div>
+    <br>
+    <div class="captcha-input">
+      <center>
+      <!-- <label for="captcha">Enter Captcha:</label> -->
+      <input type="text" id="captcha" name="captcha" placeholder="Enter Captcha">
+    </center>
+    </div>
+    <br>
+    <div class="submit-button">
+      <center>
+      <button type="submit">Submit</button>
+    </center>
+    </div>
+  </div>
+</body>
+</html>
